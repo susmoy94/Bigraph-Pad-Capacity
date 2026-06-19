@@ -133,6 +133,7 @@ big er_pad_conflict = TLOF.(PadIn | PadOut | id);
 # Initial state: all n_evtol aircraft holding in-bound at the approach,
 # pad free, taxiways empty, all stands free.
 # =====================================================================
+int n_evtol = 3;  # number of drones in the saturated loop (3/4/5)
 big s0 =
     Approach.AppN(n_evtol)
   | TLOF.Free

@@ -1,0 +1,22 @@
+
+
+const double t;
+
+P = ? [F "deadlock"]  
+
+S = ? ["deadlock"]  
+
+P = ? [F "serviced_drone_on_pad"]  
+
+P = ? [F<=t "serviced_drone_on_pad"]  
+
+P = ? [F<=t ("serviced_drone_on_pad" & P<=0 [X "serviced_drone_on_pad"])]  
+
+// Find the capacity of the vertiport?
+// Pad failures
+// Stand failures
+
+// Resilience due to weather conditions
+
+
+// WHY BIGRAPHS?  

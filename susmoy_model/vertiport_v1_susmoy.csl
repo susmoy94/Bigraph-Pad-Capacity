@@ -1,0 +1,45 @@
+label "num_drones_on_port_0" = x = 17 | x = 18 | x = 13 | x = 9 | x = 6 | x = 7 | x = 4 | x = 2 | x = 1;
+label "num_drones_on_port_1" = x = 0;
+label "num_drones_on_port_2" = false;
+label "pad_free" = x = 37 | x = 35 | x = 32 | x = 31 | x = 29 | x = 28 | x = 26 | x = 25 | x = 24 | x = 23 | x = 21 | x = 20 | x = 19 | x = 17 | x = 15 | x = 14 | x = 13 | x = 11 | x = 9 | x = 6 | x = 7 | x = 4 | x = 2 | x = 0;
+label "pad_occupied" = x = 39 | x = 38 | x = 36 | x = 33 | x = 34 | x = 30 | x = 27 | x = 22 | x = 16 | x = 18 | x = 12 | x = 10 | x = 8 | x = 5 | x = 3 | x = 1;
+label "serviced_drone_on_pad" = x = 39 | x = 38 | x = 36 | x = 33 | x = 34 | x = 30 | x = 27 | x = 18;
+label "stand_free_1" = x = 39 | x = 38 | x = 37 | x = 33 | x = 31 | x = 30 | x = 29 | x = 27 | x = 26 | x = 23 | x = 22 | x = 21 | x = 16 | x = 17 | x = 18 | x = 15 | x = 13 | x = 11 | x = 10 | x = 5 | x = 6 | x = 3 | x = 4 | x = 2 | x = 1 | x = 0;
+label "stand_occupied_1" = x = 36 | x = 35 | x = 34 | x = 32 | x = 28 | x = 25 | x = 24 | x = 20 | x = 19 | x = 14 | x = 12 | x = 8 | x = 9 | x = 7;
+label "unserviced_drone_on_pad" = x = 22 | x = 16 | x = 12 | x = 10 | x = 8 | x = 5 | x = 3 | x = 1;
+
+
+const double t;
+
+P = ? [F "deadlock"]  
+
+S = ? ["deadlock"]  
+
+P = ? [F "serviced_drone_on_pad"]  
+
+P = ? [F<=t "serviced_drone_on_pad"]  
+
+P = ? [F<=t ("serviced_drone_on_pad" & P<=0 [X "serviced_drone_on_pad"])]  
+
+
+
+const double t;
+
+P = ? [F "deadlock"]  
+
+S = ? ["deadlock"]  
+
+P = ? [F "serviced_drone_on_pad"]  
+
+P = ? [F<=t "serviced_drone_on_pad"]  
+
+P = ? [F<=t ("serviced_drone_on_pad" & P<=0 [X "serviced_drone_on_pad"])]  
+
+// Find the capacity of the vertiport?
+// Pad failures
+// Stand failures
+
+// Resilience due to weather conditions
+
+
+// WHY BIGRAPHS?  
